@@ -10,8 +10,14 @@ const john = makePerson(obj);
 console.log({ john }); */
 
 // LECTURE: PROMISES
-const getPokemonById = require('./js-foundation/06-promises');
+// const getPokemonById = require('./js-foundation/06-promises');
 
-getPokemonById(4)
+/* getPokemonById(4)
   .then((pokemon) => console.log({ pokemon }))
-  .catch((error) => console.log(error.response.data));
+  .catch((error) => console.log(error.response.data)); */
+
+const { buildLogger } = require('./adapters');
+
+const logger = buildLogger('app.js');
+logger.log('Hello world !!!');
+logger.error('This is something wrong');

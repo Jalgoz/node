@@ -1,7 +1,7 @@
 const { default: axios } = require('axios');
 
-const httpClientAdapter = {
-  get: async (url) => {
+export const httpClientAdapter = {
+  get: async (url: string) => {
     /* const response = await fetch(url);
     const data = await response.json(); */
     const response = await axios.get(url);
@@ -9,8 +9,4 @@ const httpClientAdapter = {
 
     return data;
   },
-};
-
-module.exports = {
-  httpClientAdapter,
 };

@@ -9,14 +9,16 @@ const john = makePerson(obj);
 
 console.log({ john }); */
 
+import { buildLogger } from './adapters/logger.adapter';
+
 // LECTURE: PROMISES
 // const getPokemonById = require('./js-foundation/06-promises');
 
-/* getPokemonById(4)
+/*
+getPokemonById(4)
   .then((pokemon) => console.log({ pokemon }))
-  .catch((error) => console.log(error.response.data)); */
-
-const { buildLogger } = require('./adapters');
+  .catch((error) => console.log(error.response.data));
+  */
 
 const logger = buildLogger('app.js');
 logger.log('Hello world !!!');

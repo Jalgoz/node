@@ -1,11 +1,7 @@
 const getAge = require('get-age');
 
-const getAgeAdapter = (birthDate) => {
+export const getAgeAdapter = (birthDate: string) => {
   if (!birthDate) return new Error('birthDate is required');
 
   return getAge(birthDate);
-};
-
-module.exports = {
-  getAgeAdapter
 };

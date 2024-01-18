@@ -3,7 +3,7 @@ interface User {
   name: string;
 }
 
-const users: User[] = [
+export const users: User[] = [
   {
     id: 1,
     name: 'John Doe',
@@ -19,6 +19,12 @@ export const getUserById = (
   callback: (err?: string, user?: User) => void,
 ) => {
   const user = users.find((user) => user.id === id);
+
+  if (!user) {
+    setTimeout(() => {}, 2500);
+
+    return callback(`User not found with id ${id}`);
+  }
 
   return callback(undefined, user);
 };
